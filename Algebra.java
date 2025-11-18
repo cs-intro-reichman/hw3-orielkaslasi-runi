@@ -65,23 +65,35 @@ public class Algebra {
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		int xstay = x;
-		int answer = x;
-		for (int i = 0; i<n; i++) {
-			answer = times(answer, xstay);
-		}		return answer;
-	}
+	int answer = 1;
+    if (n == 0) return 1; 
+    for (int i = 0; i < n; i++) { 
+        answer = times(answer, x);
+    }
+    return answer;
+}
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		int xnew = x1;
-		int i = 0;
-		while (xnew >= x2) {
-			xnew = minus(xnew, x2);
-			i++;
-		}
-		return i;
-	}
+		if (x2 == 0) return 0;
+    boolean negativeResult = (x1 < 0) != (x2 < 0);
+    int dividend = x1;
+    if (x1 < 0) dividend = times(x1, -1);
+    int divisor = x2;
+    if (x2 < 0) divisor = times(x2, -1);
+    int xnew = dividend;
+    int quotient = 0;
+    while (xnew >= divisor) {
+        xnew = minus(xnew, divisor);
+        quotient = plus(quotient, 1);
+    }
+
+    if (negativeResult) {
+        return times(quotient, -1);
+    } else {
+        return quotient;
+    }
+}
 
 	// Returns x1 % x2 example 25 % 7 = 3 . 
 	public static int mod(int x1, int x2) {
