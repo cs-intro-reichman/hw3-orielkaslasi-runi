@@ -30,7 +30,7 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		String pro1 = preProcess(str1);
 		String pro2 = preProcess(str2);
-		if pro1.length() != pro2.length() {
+		if (pro1.length() != pro2.length()) {
 			return false;
 		}
 		int i = 0;
@@ -39,7 +39,7 @@ public class Anagram {
 			char ch1 = pro1.charAt(i);
 			boolean found = false;
 
-			for (int k = 0; k < pro2.length() k++) {
+			for (int k = 0; k < pro2.length(); k++) {
 			if (ch1 == pro2.charAt(k)) {
 				pro2 = pro2.substring(0, k) + pro2.substring(k + 1);
                 found = true;
@@ -59,17 +59,20 @@ public class Anagram {
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
 		int i = 0;
-		String newStr;
+		String newStr = "";
 		while (i<str.length()) {
 			char ch = str.charAt(i);
 			
-			if (ch >= 'A' && ch <+ 'Z') {
+			if (ch >= 'A' && ch <= 'Z') {
 				newStr = newStr + (char)(ch + 32);
 			}
 			else if (ch >= 'a' && ch <= 'z') {
 				newStr += ch;
 			}
-			
+			else if (ch == ' ') {
+				new str += ch;
+			}
+			i++
 		}
 		return newStr;
 	} 
