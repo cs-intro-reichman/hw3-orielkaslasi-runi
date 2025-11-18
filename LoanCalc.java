@@ -31,9 +31,9 @@ public class LoanCalc {
 		double balance = loan;
 		double ratenum = 1 + rate / 100.0; //convert from percent
 		for (int i = 0; i<n; i++){
-			balance = (balance - payment) * rate;
+			balance = balance * ratenum - payment;
 		}
-		return endBalance;
+		return balance;
 	}
 	
 	// Uses sequential search to compute an approximation of the periodical payment
