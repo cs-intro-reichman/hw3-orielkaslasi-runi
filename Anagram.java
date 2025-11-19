@@ -33,8 +33,6 @@ public class Anagram {
 		if (pro1.length() != pro2.length()) {
 			return false;
 		}
-		int i = 0;
-		int k = 0;
 		for (int i = 0; i < pro1.length(); i++) {
 			char ch1 = pro1.charAt(i);
 			boolean found = false;
