@@ -70,9 +70,9 @@ public class Anagram {
 				newStr += ch;
 			}
 			else if (ch == ' ') {
-				new str += ch;
+				newStr += ch;
 			}
-			i++
+			i++;
 		}
 		return newStr;
 	} 
