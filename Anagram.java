@@ -45,8 +45,7 @@ public class Anagram {
                 found = true;
                 break;
 			}
-			}
-
+		}
 			if (!found) {
 				return false;
 			}
@@ -92,4 +91,5 @@ public class Anagram {
     }
 
     return anagram;
+}
 }
