@@ -57,6 +57,7 @@ public class Anagram {
         }
     }
     return sb.toString();
+	}
 	   
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
@@ -71,7 +72,6 @@ public class Anagram {
 
         str = str.substring(0, index) + str.substring(index + 1);
     }
-	}
     return anagram;
 }
 }

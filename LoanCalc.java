@@ -36,6 +36,7 @@ public class LoanCalc {
         balance = balance * (1 + r) - payment;
     }
     return balance;
+	}
 	
 	// Uses sequential search to compute an approximation of the periodical payment
 	// that will bring the ending balance of a loan close to 0.
